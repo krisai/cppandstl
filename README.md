@@ -1,10 +1,10 @@
-烫烫烫烫烫烫烫烫==使用了没有初始化的内存
-build-in type
-int,float,double,char
-user-defined type
-class,struct,union
-primitive type
-reference type
+>烫烫烫烫烫烫烫烫==使用了没有初始化的内存
+- build-in type
+  * int,float,double,char
+- user-defined type
+  * class,struct,union
+- primitive type
+- reference type
 
 fields
 parameters
@@ -14,13 +14,7 @@ declaration
 definition
 
 
-堆
-堆栈
-new malloc
-全局数据区
-全局变量
-本地变量
-成员变量
+
 
 storage allocation
 
@@ -185,11 +179,12 @@ const
 申明一个 const 成员变量必需有初始化
 const对象会调用构成overload成员函数中结尾有const的那个成员函数
 
-static 
-	static 本地变量就是全局变量
-	static void f（）只能在这个.c文件中能被访问
-	static object
-	static class member
+static
+---
+* static 本地变量就是全局变量
+* static void f（）只能在这个.c文件中能被访问
+* static object
+* static class member
 
 Operator overloading
 
@@ -205,18 +200,19 @@ Conversions
 
 
 References
-Thinking in C++ (B. Eckel) Free online edition!
-Essential C++ (S. Lippman)
-Effective C++ (S. Meyers)
-C++ Programming Language (B. Stroustrup)
-Design Patterns (Gamma, Helm, Johnson,Vlissides)
-Object-Oriented Analysis and Design with Applications (G. Booch, et. al)
+---
+* Thinking in C++ (B. Eckel) Free online edition!
+* Essential C++ (S. Lippman)
+* Effective C++ (S. Meyers)
+* C++ Programming Language (B. Stroustrup)
+* Design Patterns (Gamma, Helm, Johnson,Vlissides)
+* Object-Oriented Analysis and Design with Applications (G. Booch, et. al)
 
-TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens.
-Unix Network Programming: Networking APIs: Sockets and XTI (Volume 1) by W. Richard Stevens.
-Advanced Programming in the Unix Environment by W. Richard Stevens, Addison-Wesley, 1993.
-Computer Systems: A Programmer's Perspective by Randal E. Bryant and David R. O'Hallaron. Prentice Hall, 2003
+- TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens.
+- Unix Network Programming: Networking APIs: Sockets and XTI (Volume 1) by W. Richard Stevens.
+- Advanced Programming in the Unix Environment by W. Richard Stevens, Addison-Wesley, 1993.
+- Computer Systems: A Programmer's Perspective by Randal E. Bryant and David R. O'Hallaron. Prentice Hall, 2003
 
-15-721 Database Systems:
-15-213 Introduction to Computer Systems
-15-418 Parallel Computer Architecture and Programming
+* 15-721 Database Systems:
+* 15-213 Introduction to Computer Systems
+* 15-418 Parallel Computer Architecture and Programming
