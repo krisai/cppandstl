@@ -95,15 +95,19 @@ OOP
 父类的constructor init也必须放在initializer list里
 
 overload:
-Number of arguments				Yes
-Type of arguments				Yes
-Presence or absence of ellipsis	Yes
-const or volatile 				Yes
+Function return type					No
+Use of typedef names					No
+Unspecified array bounds				No
+Number of arguments						Yes
+Type of arguments						Yes
+Presence or absence of ellipsis			Yes
+const or volatile 						Yes
+
 override父类和子类有成员的名字相同
 
 
 
-inline函数只定义在.h文件中
+inline函数 申明／定义 都应该放在.h文件中
 当函数只有几行时
 当函数频繁调用loop循环时候
 适合使用
@@ -115,12 +119,14 @@ macro不做类型检查
 
 reference:
 是一个binding对象的地址
+是一个const指针
+```c
 int i;
 int * p;
-int & p1 = i; 一般变量的别名
-int *& p1 = p; 一个指针的别名	References to Pointers
-不存在 int &* p2; pointer to reference //error
-
+int & p1 = i; //一般变量的别名
+int *& p1 = p; //一个指针的别名	References to Pointers
+int &* p2; //不存在 pointer to reference //error
+```
 polymorphism
 	upcasting and downcasting 
 	Override
@@ -131,7 +137,7 @@ polymorphism
 	name hiding
 
 只有c++有name hiding父类有overload，子类有override，
-子类不能访问与父类同名overload父类的方法，
+子类不能访问与父类同名overload的父类的方法，
 此时子类只有自己的成员函数，父类的被隐藏起来了
 
 upcast 和 dynamic binding 构成 polymorphism
@@ -149,6 +155,11 @@ upcast 和 dynamic binding 构成 polymorphism
 static binding 效率高
 c++的Initialization和assignment是严格区分的
 
+Local scope 
+Function scope
+File scope 
+Class scope
+Prototype scope
 
 
 ```c
@@ -160,7 +171,9 @@ const
 		const int f4(){return 1;};
 	const object
 		const Currency the_raise(42,38);
-	const member function
+	const member function  
+	//成员函数末尾加const 是说这个函数不能修改任何成员变量,
+	//this是const,即这个函数不能修改this的所有属性(即成员变量)
 		int get_day() const;
 		int get_day() const{return day;};
 		int Date::get_day() const{}
@@ -168,6 +181,10 @@ const
 	char * const *pcp = &p;
 	const char* const p= &p;
 ```
+申明一个 const 对象要求所有成员变量必需有初始化
+申明一个 const 成员变量必需有初始化
+const对象会调用构成overload成员函数中结尾有const的那个成员函数
+
 static 
 	static 本地变量就是全局变量
 	static void f（）只能在这个.c文件中能被访问
@@ -178,10 +195,10 @@ Operator overloading
 
 Stream extraction << and   insertion  >>
 
-dynamic_cast Used for conversion of polymorphic types.
-static_cast Used for conversion of nonpolymorphic types.
-const_cast Used to remove the const, volatile, and __unaligned attributes.
-reinterpret_cast Used for simple reinterpretation of bits.
+> dynamic_cast Used for conversion of polymorphic types.
+> static_cast Used for conversion of nonpolymorphic types.
+> const_cast Used to remove the const, volatile, and unaligned attributes.
+> reinterpret_cast Used for simple reinterpretation of bits.
 
 Conversions
   implicit - explicit - user-defined 
